@@ -1,17 +1,17 @@
 var api = require("Modules/API");
 
-function loginAPI() {
+function loginAPI({ email, password }) {
   return api("auth", {
 		method: "POST",
 		body: {
 			credentials: {
-        email: email.value,
-        password: password.value
+        email: email,
+        password: password
       }
 		}
 	});
 }
 
-module.exports = {
-  login: loginAPI
+module.exports = { 
+  login: loginAPI 
 };
