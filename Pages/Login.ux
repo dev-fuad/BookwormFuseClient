@@ -1,0 +1,30 @@
+<Page ux:Class="Login">
+  <Router ux:Dependency="router" />
+  <JavaScript File="Login.js" />
+  
+    <Grid ColumnCount="2" Rows="1*,auto,auto,1*">
+
+      <Text Row="0" ColumnSpan="2" FontSize="42" Margin="0,60,0,0" Alignment="VerticalCenter" TextAlignment="Center">
+        Login
+      </Text>
+
+      <StackPanel ColumnSpan="2" Row="1" ItemSpacing="10" Padding="10">
+        <Text>Email:</Text>
+        <TextBox Padding="10,10,0,10" Value="{email}" />
+      
+        <Text>Password:</Text>
+        <TextBox Padding="10,10,0,10" Value="{password}" />
+
+        <Button ux:Name="loginButton" Text="Login" Clicked="{goToDashboard}" Padding="10">
+          <Busy ux:Name="isBusy" IsActive="false" />
+          <WhileBusy>
+            <Change loadingPanel.Opacity="1" Duration=".4" />
+            <Change loginButton.Text="" Duration=".1" />
+          </WhileBusy>
+          <MyLoadingIndicator ux:Name="loadingPanel" Opacity="0" ThemeColor="#00d5ff" />
+        </Button>
+      </StackPanel>
+
+      <Button Row="3" ColumnSpan="2" Alignment="Bottom" Text="Forgot Password" Padding="10,30,0,10" />
+    </Grid>
+</Page>

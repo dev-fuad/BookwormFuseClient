@@ -1,0 +1,14 @@
+<Page ux:Class="Dashboard">
+  <Router ux:Dependency="router" />
+  <JavaScript File="Dashboard.js" />
+
+  <StackPanel Alignment="Center">
+  <Text Value="{email}" />
+
+  <Button ux:Name="logoutButton" Clicked="{logout}">
+    <Text>
+      Logout
+    </Text>
+  </Button>
+  </StackPanel>
+</Page>
